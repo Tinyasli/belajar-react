@@ -1,4 +1,4 @@
-# Simulasi APP
+# Simulasi backend
 
 Backend sederhana untuk login Sakuku. Menyediakan satu endpoint utama:
 `POST /api/auth/login`. Data user disimpan di **MySQL**, dijalankan lewat
