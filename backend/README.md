@@ -1,4 +1,4 @@
-# Sakuku Backend (Express + TypeScript + MySQL via XAMPP)
+# Simulasi APP
 
 Backend sederhana untuk login Sakuku. Menyediakan satu endpoint utama:
 `POST /api/auth/login`. Data user disimpan di **MySQL**, dijalankan lewat
