@@ -1,4 +1,4 @@
-# Sakuku Fullstack (Belajar React + TS + Node.js)
+# Sakuku-u Fullstack (Belajar React + TS + Node.js)
 
 Dua project terpisah yang jalan bareng:
 
