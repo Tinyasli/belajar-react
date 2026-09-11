@@ -1,0 +1,363 @@
+.screen {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+}
+
+@media (max-width: 860px) {
+  .screen {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Left brand panel ---------- */
+
+.brand-panel {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #eaf2fb;
+  padding: 56px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.brand-panel::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 194, 75, 0.25), transparent 70%);
+  top: -140px;
+  right: -140px;
+}
+
+.brand-panel::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1px solid rgba(234, 242, 251, 0.15);
+  bottom: -120px;
+  left: -80px;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  z-index: 1;
+}
+
+.brand-mark__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-size: 1rem;
+}
+
+.brand-panel h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  line-height: 1.25;
+  max-width: 22ch;
+  margin: 0;
+  z-index: 1;
+}
+
+.brand-panel > p {
+  max-width: 40ch;
+  color: rgba(234, 242, 251, 0.85);
+  line-height: 1.6;
+  margin: 0;
+  z-index: 1;
+}
+
+.brand-benefits {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1;
+}
+
+.brand-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(234, 242, 251, 0.92);
+  font-size: 0.95rem;
+}
+
+.brand-benefits li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex: none;
+}
+
+@media (max-width: 860px) {
+  .brand-panel {
+    padding: 40px 28px;
+  }
+  .brand-panel h2 {
+    max-width: none;
+  }
+}
+
+/* ---------- Right form card ---------- */
+
+.card {
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 56px 64px;
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card h1 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  margin: 0 0 6px;
+}
+
+.muted {
+  color: var(--color-ink-soft);
+  margin: 0 0 28px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.field__label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 6px;
+}
+
+.field__control {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #fbfdff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field__control:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(14, 76, 134, 0.12);
+}
+
+.field__control--invalid {
+  border-color: var(--color-danger);
+}
+
+.field__control--invalid:focus-within {
+  box-shadow: 0 0 0 3px rgba(198, 50, 58, 0.12);
+}
+
+.field__prefix {
+  padding: 0 0 0 14px;
+  color: var(--color-ink-soft);
+  font-weight: 500;
+}
+
+.field__control input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 13px 14px;
+  font-size: 1rem;
+  color: var(--color-ink);
+  min-width: 0;
+  letter-spacing: 0.02em;
+}
+
+.field__control input:disabled {
+  color: var(--color-ink-soft);
+}
+
+.field__toggle {
+  border: none;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.field__error {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.82rem;
+  color: var(--color-danger);
+}
+
+.server-error {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  font-size: 0.88rem;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.08s ease, opacity 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.99);
+}
+
+.btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.btn--ghost {
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  color: var(--color-ink);
+  margin-top: 24px;
+}
+
+.link-btn {
+  display: block;
+  margin: 14px auto 0;
+  border: none;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hint {
+  margin-top: 28px;
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+  text-align: center;
+}
+
+.hint code {
+  background: var(--color-bg);
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 860px) {
+  .card {
+    padding: 40px 28px;
+  }
+}
+
+/* ---------- Success screen ---------- */
+
+.card--success {
+  text-align: center;
+  align-items: center;
+}
+
+.success-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(28, 138, 75, 0.12);
+  color: var(--color-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+
+.card--success h1 {
+  margin-bottom: 4px;
+}
+
+.balance-pill {
+  margin: 22px 0 6px;
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.balance-pill span {
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+}
+
+.balance-pill strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-primary-dark);
+}
