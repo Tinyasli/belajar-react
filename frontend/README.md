@@ -1,4 +1,4 @@
-# Sakuku Clone — Login Page (React + TypeScript)
+# SimulApp — Login Page (React + TypeScript)
 
 Proyek frontend untuk halaman login Sakuku, dengan validasi form dan
 pemanggilan **backend sungguhan** (lihat folder `sakuku-backend/` yang
